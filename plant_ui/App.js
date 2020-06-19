@@ -1,12 +1,11 @@
 // @flow
-import React, { Component } from 'react';
-import { StyleSheet, Text, FlatList, ActivityIndicator, View, Image } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import { constants } from 'expo';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/components/home';
-import DetailScreen from './src/components/detail';
 
-class App extends Component {
+// *** Just a static screen w/ text on it
+/* class App extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -16,8 +15,19 @@ class App extends Component {
             </View>
         );
     }
-}
+} */
 
+const Stack = createStackNavigator();
+
+function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
 export default App;
 /* export default StackNavigator({
     Home: { screen: HomeScreen,
@@ -33,7 +43,7 @@ export default App;
     }
 }); */
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
@@ -44,4 +54,4 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 50
     }
-  });
+  }); */

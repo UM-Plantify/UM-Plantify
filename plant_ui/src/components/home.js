@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 
 export default class HomeScreen extends React.Component {
@@ -14,51 +14,64 @@ export default class HomeScreen extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.fetchDataFromApi();
-  }
-
-  fetchDataFromApi = ()  => {
-    const url = "http://192.168.50.43:8000/api/list.json";
-
-    this.setState({ loading: true });
-
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
-
-        this.setState({
-          data: res,
-          error: null,
-          loading: false,
-          refreshing: false
-        });
-      })
-      .catch(error => {
-        this.setState({ error, loading : false });
-      })
-  };
-  renderSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 1,
-          width: "86%",
-          backgroundColor: "#CED0CE",
-          marginLeft: "14%",
-          marginTop: "3%"
-        }}
-      />
-    );
-  };
-
-  renderHeader = () => {
-    return <Text>This is a header.</Text>;
-  };
+  
 
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.titleText}>
+          Home Screen
+        </Text>
+      </View>
+    );
+  }
+}
+
+/* componentDidMount() {
+  this.fetchDataFromApi();
+}
+
+fetchDataFromApi = ()  => {
+  const url = "http://192.168.50.43:8000/api/list.json";
+
+  this.setState({ loading: true });
+
+  fetch(url)
+    .then(res => res.json())
+    .then(res => {
+
+      this.setState({
+        data: res,
+        error: null,
+        loading: false,
+        refreshing: false
+      });
+    })
+    .catch(error => {
+      this.setState({ error, loading : false });
+    })
+};
+renderSeparator = () => {
+  return (
+    <View
+      style={{
+        height: 1,
+        width: "86%",
+        backgroundColor: "#CED0CE",
+        marginLeft: "14%",
+        marginTop: "3%"
+      }}
+    />
+  );
+};
+
+renderHeader = () => {
+  return <Text>This is a header.</Text>;
+}; */
+
+
+
+/* <View style={styles.container}>
         <Text style={styles.titleText}>
               Hello World, This is the homepage.
         </Text>
@@ -86,11 +99,7 @@ export default class HomeScreen extends React.Component {
 
             />
         </List>
-      </View>
-    );
-  }
-}
-
+      </View> */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
