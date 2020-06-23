@@ -5,7 +5,7 @@ import Navigator from './routes/Stack'
 
 const App = () => {
   return (
-    <Navigator />
+    <Navigator/>
   )
 }
 

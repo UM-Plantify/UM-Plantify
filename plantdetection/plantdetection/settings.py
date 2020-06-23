@@ -25,7 +25,7 @@ SECRET_KEY = 'q_+vjp2ez%*tm0-n2(n4aknai%c+g69z-8^sba)ndgjb0=be1t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.50.43", "localhost"]
+ALLOWED_HOSTS = ["192.168.50.43", "localhost", "umplantify.serverless.social"]
 
 
 # Application definition

@@ -19,3 +19,13 @@ def get_species_list(request):
     species_list = Species.objects.order_by('-common_name')
     serializer = SpeciesSerializer(species_list, many=True)
     return JsonResponse(serializer.data, safe=False)
+
+@csrf_exempt
+def get_species(request, id):
+    """
+    Get specific species
+    """
+    species = Species.objects.get(pk=id)
+    serializer = SpeciesSerializer(species)
+    return JsonResponse(serializer.data, safe=False)
+    
