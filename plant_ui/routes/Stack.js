@@ -4,6 +4,8 @@ import { createAppContainer } from 'react-navigation'
 import Home from '../src/Home'
 import Landing from '../src/Landing'
 import Database from '../src/Database'
+import TakePhoto from '../src/TakePhoto'
+import ConfirmPhoto from '../src/ConfirmPhoto'
 
 const screens = {
     Home: {
@@ -23,6 +25,12 @@ const screens = {
         navigationOptions: {
             title: 'Database'
         }
+    },
+    TakePhoto: {
+        screen: TakePhoto
+    },
+    ConfirmPhoto: {
+        screen: ConfirmPhoto
     }
 }
 
