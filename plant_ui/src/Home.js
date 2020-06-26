@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text } from "react-native";
+import { View, Button } from "react-native";
 
-function Home() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
+function Home({navigation}) {
+  return (
+    <View style={{ flex: 1, padding: 24 }}>
+      <Button
+        title="Take Photo"
+        onPress={() => navigation.navigate('TakePhoto')}
+      />
+      <Button
+        title="Database"
+        onPress={() => navigation.navigate('Database')}
+      />
+    </View>
+  );
 }
 
-export default Home
+export default Home;
