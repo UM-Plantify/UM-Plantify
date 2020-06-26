@@ -3,13 +3,15 @@ import { View, Text, Image, Button } from "react-native";
 
 function ConfirmPhoto({navigation}) {
   const photoTaken = navigation.state.params.photoTaken;
-  console.log(photoTaken);
   return (
     <View style={{ flex: 1, padding: 24 }}>
       <Text style={{justifyContent: 'center'}}>
           Use this photo?
       </Text>
-      <Image source={{uri: photoTaken}}/>
+      <Image 
+        source={{uri: photoTaken}}
+        style={{ width: 300, height: 400}}
+      />
       <Button title="Yes"/>
       <Button
         title="No"

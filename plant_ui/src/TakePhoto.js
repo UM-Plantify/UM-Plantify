@@ -8,10 +8,14 @@ export default function TakePhoto({navigation}) {
   const [cameraRef, setCameraRef] = useState(null)
 
   useEffect(() => {
+    let mounted = true;
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
+      if (mounted) {
+        setHasPermission(status === 'granted');
+      }
     })();
+    return () => mounted = false;
   }, []);
 
   if (hasPermission === null) {
@@ -31,13 +35,12 @@ export default function TakePhoto({navigation}) {
           }}>
           <TouchableOpacity style={{alignSelf: 'center'}} onPress={async() => {
               if (cameraRef){
-                  let photo = await cameraRef.takePictureAsync();
-                  let uri = photo.uri.startsWith("file:///")
-                    ? photo.uri.replace("file:///", "")
-                    : photo.uri;
-                  navigation.navigate({routeName: 'ConfirmPhoto', params: {
-                      photoTaken: uri,
-                  }});
+                const options = {quality: 1, base64:true};
+                let photo = await cameraRef.takePictureAsync(options);
+                let uri = photo.uri;
+                navigation.navigate({routeName: 'ConfirmPhoto', params: {
+                    photoTaken: uri,
+                }});
               }
           }}>
               <View style={{
