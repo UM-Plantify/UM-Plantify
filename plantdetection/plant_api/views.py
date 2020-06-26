@@ -28,4 +28,4 @@ def get_species(request, id):
     species = Species.objects.get(pk=id)
     serializer = SpeciesSerializer(species)
     return JsonResponse(serializer.data, safe=False)
-    
+
