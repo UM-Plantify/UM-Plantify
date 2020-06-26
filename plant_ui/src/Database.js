@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
+import * as api from './api';
+
+const getSpeciesList = async () => {
+  return await api.getSpeciesList();
+}
 
 function Database() {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://umplantify.serverless.social/api/list',
+    /* fetch('https://umplantify.serverless.social/api/list',
     {
       method: 'GET'
     })
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false)); */
+    let json = getSpeciesList();
+    json.then((data) => {
+      setData(data);
+      setLoading(false);
+    });
   }, []);
   
   return (

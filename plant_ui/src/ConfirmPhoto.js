@@ -12,7 +12,14 @@ function ConfirmPhoto({navigation}) {
         source={{uri: photoTaken}}
         style={{ width: 300, height: 400}}
       />
-      <Button title="Yes"/>
+      <Button 
+        title="Yes"
+        onPress={() => {
+          navigation.navigate({routeName: 'PlantInfo', params: {
+            id: "1",
+        }});
+        }}
+      />
       <Button
         title="No"
         onPress={() => navigation.navigate('TakePhoto')}
