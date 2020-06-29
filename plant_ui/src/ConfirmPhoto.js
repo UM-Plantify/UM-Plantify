@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Button } from "react-native";
+import * as api from './api';
+
+const getIdentification = async (image) => {
+  return await api.identifySpecies(image);
+}
 
 function ConfirmPhoto({navigation}) {
   const photoTaken = navigation.state.params.photoTaken;
@@ -15,9 +20,13 @@ function ConfirmPhoto({navigation}) {
       <Button 
         title="Yes"
         onPress={() => {
-          navigation.navigate({routeName: 'PlantInfo', params: {
-            id: "1",
-        }});
+          let json = getIdentification(photoTaken);
+          json.then((data) => {
+            let plantId = data.id;
+            navigation.navigate({routeName: 'PlantInfo', params: {
+              id: plantId,
+            }});
+          });
         }}
       />
       <Button

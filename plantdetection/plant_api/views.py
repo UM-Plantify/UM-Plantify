@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from .models import Species
 from .serializers import SpeciesSerializer
 from django.views.decorators.csrf import csrf_exempt
+from .identification import identify
+from rest_framework.views import APIView
 
 def index(request):
     species_list = Species.objects.order_by('-common_name')
@@ -29,3 +31,12 @@ def get_species(request, id):
     serializer = SpeciesSerializer(species)
     return JsonResponse(serializer.data, safe=False)
 
+class Identify(APIView):
+    @csrf_exempt
+    def post(request, image):
+        """
+        Call identification method using image and return the resulting plant id
+        """
+        plant_id = identify(image)
+        response_dict = {"id" : plant_id}
+        return JsonResponse(response_dict, safe=False)

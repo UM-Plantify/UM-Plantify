@@ -26,3 +26,19 @@ export const getSpecies = async (speciesId) => {
         console.error(error);
     }
 }
+
+export const identifySpecies = async (image) => {
+    try {
+        let response = await fetch('https://umplantify.serverless.social/api/identify',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+              image: image,
+          }),
+        });
+        let json = await response.json();
+        return json;
+    } catch (error) {
+        console.error(error);
+    }
+}
