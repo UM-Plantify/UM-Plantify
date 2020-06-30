@@ -6,6 +6,7 @@ import Landing from '../src/Landing'
 import Database from '../src/Database'
 import TakePhoto from '../src/TakePhoto'
 import ConfirmPhoto from '../src/ConfirmPhoto'
+import Map from '../src/Map'
 
 const screens = {
     Home: {
@@ -31,6 +32,9 @@ const screens = {
     },
     ConfirmPhoto: {
         screen: ConfirmPhoto
+    },
+    Map: {
+        screen: Map
     }
 }
 
