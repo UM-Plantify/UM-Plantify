@@ -1,20 +1,20 @@
-import React from 'react'
-import { createStackNavigator } from 'react-navigation-stack'
-import { createAppContainer } from 'react-navigation'
-import Home from '../src/Home'
-import Landing from '../src/Landing'
-import Database from '../src/Database'
-import TakePhoto from '../src/TakePhoto'
-import ConfirmPhoto from '../src/ConfirmPhoto'
-import PlantInfo from '../src/PlantInfo'
-import Help from '../src/Help'
-import Instructions from '../src/Instructions'
+import React from 'react';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import Home from '../src/Home';
+import Landing from '../src/Landing';
+import Database from '../src/Database';
+import TakePhoto from '../src/TakePhoto';
+import ConfirmPhoto from '../src/ConfirmPhoto';
+import PlantInfo from '../src/PlantInfo';
+import Help from '../src/Help';
+import Instructions from '../src/Instructions';
 
 const screens = {
     Home: {
         screen: Home,
         navigationOptions: {
-            title: 'Home'
+            title: {}
         },
     },
     Landing: {
@@ -46,6 +46,6 @@ const screens = {
     }
 }
 
-const Stack = createStackNavigator(screens, {initialRouteName:'Landing'}) 
+const Stack = createStackNavigator(screens, {headerMode: 'none', initialRouteName:'Landing'}) 
 
 export default createAppContainer(Stack)
