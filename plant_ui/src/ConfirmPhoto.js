@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Button } from "react-native";
 import * as api from './api';
+import * as common from "./common";
 
 const getIdentification = async (image) => {
   return await api.identifySpecies(image);
@@ -9,6 +10,8 @@ const getIdentification = async (image) => {
 function ConfirmPhoto({navigation}) {
   const photoTaken = navigation.state.params.photoTaken;
   return (
+    <>
+    {common.FullHeader(navigation)}
     <View style={{ flex: 1, padding: 24 }}>
       <Text style={{justifyContent: 'center'}}>
           Use this photo?
@@ -34,6 +37,7 @@ function ConfirmPhoto({navigation}) {
         onPress={() => navigation.navigate('TakePhoto')}
       />
     </View>
+    </>
   );
 }
 

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import * as api from './api';
+import * as common from "./common";
 
 const getSpeciesList = async () => {
   return await api.getSpeciesList();
 }
 
-function Database() {
+function Database({navigation}) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -27,6 +28,8 @@ function Database() {
   }, []);
   
   return (
+    <>
+    {common.FullHeader(navigation)}
     <View style={{ flex: 1, padding: 24 }}>
       {isLoading ? <ActivityIndicator/> : (
         <FlatList
@@ -38,6 +41,7 @@ function Database() {
         />
       )}
     </View>
+    </>
   );
 }
 

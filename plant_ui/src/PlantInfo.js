@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator } from "react-native";
 import * as api from './api';
+import * as common from "./common";
 
 const getSpecies = async (id) => {
   return await api.getSpecies(id);
@@ -21,6 +22,8 @@ function PlantInfo({navigation}) {
   }, []);
   
   return (
+    <>
+    {common.FullHeader(navigation)}
     <View style={{ flex: 1, padding: 24 }}>
       {isLoading ? <ActivityIndicator/> : (
         <>
@@ -33,6 +36,7 @@ function PlantInfo({navigation}) {
         </>
       )}
     </View>
+    </>
   );
 }
 
