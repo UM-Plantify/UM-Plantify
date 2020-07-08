@@ -12,6 +12,10 @@ function Home({navigation}) {
         title="Database"
         onPress={() => navigation.navigate('Database')}
       />
+      <Button
+        title='Map'
+        onPress={() => navigation.navigate('DynamicMap')}
+      />
     </View>
   );
 }
