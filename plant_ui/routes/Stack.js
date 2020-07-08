@@ -6,7 +6,8 @@ import Landing from '../src/Landing'
 import Database from '../src/Database'
 import TakePhoto from '../src/TakePhoto'
 import ConfirmPhoto from '../src/ConfirmPhoto'
-import Map from '../src/Map'
+import DynamicMap from '../src/DynamicMap'
+import StaticMap from '../src/StaticMap'
 
 const screens = {
     Home: {
@@ -33,8 +34,11 @@ const screens = {
     ConfirmPhoto: {
         screen: ConfirmPhoto
     },
-    Map: {
-        screen: Map
+    DynamicMap: {
+        screen: DynamicMap
+    },
+    StaticMap: {
+        screen: StaticMap
     }
 }
 

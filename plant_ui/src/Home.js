@@ -14,7 +14,7 @@ function Home({navigation}) {
       />
       <Button
         title='Map'
-        onPress={() => navigation.navigate('Map')}
+        onPress={() => navigation.navigate('DynamicMap')}
       />
     </View>
   );

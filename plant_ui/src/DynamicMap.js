@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import MapView from 'react-native-maps'
 import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Button } from 'react-native';
 
-export default function Map({Navigation}) {
+export default function DynamicMap({navigation}) {
     return(
         <View style={styles.container}>
             <MapView 
@@ -10,13 +10,16 @@ export default function Map({Navigation}) {
                 initialRegion={{
                     latitude: 42.280792,
                     longitude: -83.718970,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                  }}
+                    latitudeDelta: 0.0160,
+                    longitudeDelta: 0.0160,
+                }}
+                showsUserLocation={true}
+                rotateEnabled={false}
             />
             <View style={styles.buttonStyle}>
                 <Button
                     title='Static Map'
+                    onPress={() => navigation.navigate('StaticMap')}
                 />
             </View>
         </View>
