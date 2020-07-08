@@ -70,6 +70,7 @@ export default function TakePhoto({navigation}) {
         </View>
       </Camera>
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }

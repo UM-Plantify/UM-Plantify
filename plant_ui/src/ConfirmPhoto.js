@@ -37,6 +37,7 @@ function ConfirmPhoto({navigation}) {
         onPress={() => navigation.navigate('TakePhoto')}
       />
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }

@@ -9,6 +9,8 @@ import ConfirmPhoto from '../src/ConfirmPhoto';
 import PlantInfo from '../src/PlantInfo';
 import Help from '../src/Help';
 import Instructions from '../src/Instructions';
+import DynamicMap from '../src/DynamicMap'
+import StaticMap from '../src/StaticMap'
 
 const screens = {
     Home: {
@@ -43,6 +45,12 @@ const screens = {
     },
     Instructions: {
         screen: Instructions
+    },
+    DynamicMap: {
+        screen: DynamicMap
+    },
+    StaticMap: {
+        screen: StaticMap
     }
 }
 

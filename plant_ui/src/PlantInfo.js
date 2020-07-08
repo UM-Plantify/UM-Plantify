@@ -33,9 +33,13 @@ function PlantInfo({navigation}) {
         <Text>
             Scientific Name: {data.scientific_name}
         </Text>
+        <Text>
+          More detailed info will be included on this page for this plant, as well as some sample photos of this plant!
+        </Text>
         </>
       )}
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator, FlatList } from "react-native";
+import { View, Text, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
 import * as api from './api';
 import * as common from "./common";
 
@@ -36,11 +36,16 @@ function Database({navigation}) {
           data={data}
           keyExtractor={({ id }, index) => id.toString()}
           renderItem={({ item }) => (
-            <Text>{item.common_name}, {item.scientific_name}</Text>
+            <TouchableOpacity onPress={()=> navigation.navigate({routeName: 'PlantInfo', params: {
+              id: item.id,
+            }})}>
+              <Text>{item.common_name}, {item.scientific_name}</Text>
+            </TouchableOpacity>
           )}
         />
       )}
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }

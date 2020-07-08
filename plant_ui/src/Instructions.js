@@ -12,6 +12,7 @@ function Instructions({navigation}) {
             All the fun instructions go here!
         </Text>
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }

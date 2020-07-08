@@ -12,9 +12,10 @@ function Help({navigation}) {
             All the fun help text goes here!
         </Text>
         <TouchableOpacity onPress={()=> navigation.navigate("Instructions")}>
-          <Text>Link to instructions!</Text>
+          <Text style={{color:'#0000ff'}}>Link to instructions!</Text>
         </TouchableOpacity>
     </View>
+    {common.Footer(navigation)}
     </>
   );
 }
