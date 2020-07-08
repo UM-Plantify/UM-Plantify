@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
+import * as common from "./common";
 
 export default function TakePhoto({navigation}) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -25,6 +26,8 @@ export default function TakePhoto({navigation}) {
     return <Text>No access to camera</Text>;
   }
   return (
+    <>
+    {common.FullHeader(navigation)}
     <View style={{ flex: 1 }}>
       <Camera style={{ flex: 1 }} type={type} ref={ref => {setCameraRef(ref);}}>
         <View
@@ -67,5 +70,7 @@ export default function TakePhoto({navigation}) {
         </View>
       </Camera>
     </View>
+    {common.Footer(navigation)}
+    </>
   );
 }

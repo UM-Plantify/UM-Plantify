@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ImageZoom from 'react-native-image-pan-zoom';
 import { View, Image, StyleSheet, Dimensions, Button } from 'react-native';
+import * as common from './common';
 
 export default function StaticMap({navigation}) {
     return(
+        <>
+        {common.FullHeader(navigation)}
         <View style={styles.container}>
             <ImageZoom 
                 cropWidth={Dimensions.get('window').width}
@@ -25,6 +28,8 @@ export default function StaticMap({navigation}) {
                 />
             </View>
         </View>
+        {common.Footer(navigation)}
+        </>
     )
 }
 

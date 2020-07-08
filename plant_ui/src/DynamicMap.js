@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MapView from 'react-native-maps'
 import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Button } from 'react-native';
+import * as common from './common';
 
 export default function DynamicMap({navigation}) {
     return(
+        <>
+        {common.FullHeader(navigation)}
         <View style={styles.container}>
             <MapView 
                 style={styles.mapStyle} 
@@ -23,6 +26,8 @@ export default function DynamicMap({navigation}) {
                 />
             </View>
         </View>
+        {common.Footer(navigation)}
+        </>
     )
 }
 
