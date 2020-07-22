@@ -1,5 +1,20 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+
+export const common_styles = StyleSheet.create({
+    footer: {
+        flexDirection:"row", 
+        marginBottom: 0, 
+        backgroundColor: "#042940"
+    },
+    camera: {
+        backgroundColor: "#001827"
+    },
+    icon: {
+        width: 50,
+        height: 50
+    }
+});
 
 export const FullHeader = (navigation) => {
     return (
@@ -66,16 +81,20 @@ export const LogoAndHomeHeader = (navigation) => {
 export const Footer = (navigation) => {
     return (
         <>
-        <View style={{flexDirection:"row", marginBottom: 0, backgroundColor: '#0000ff'}}>
-            
+        <View style={common_styles.footer}>
+            <View style= {{flex:1}}>
+                <TouchableOpacity style={{justifyContent: 'flex-start'}} onPress={()=> navigation.navigate("DynamicMap")}>
+                    <Image style={common_styles.icon} source={require("./icons/map.png")}/>
+                </TouchableOpacity>
+            </View>
             <View style= {{flex:1}}>
                 <TouchableOpacity style={{justifyContent: 'center'}} onPress={()=> navigation.navigate("TakePhoto")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>CAMERA</Text>
+                <Image style={common_styles.icon} source={require("./icons/camera.png")}/>
                 </TouchableOpacity>
             </View>
             <View style= {{flex:1}}>
                 <TouchableOpacity style={{justifyContent: 'flex-end'}} onPress={()=> navigation.navigate("Database")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>DATA</Text>
+                <Image style={common_styles.icon} source={require("./icons/plant.png")}/>
                 </TouchableOpacity>
             </View>
         </View>
