@@ -36,7 +36,7 @@ export default function TakePhoto({navigation}) {
             backgroundColor: 'transparent',
             justifyContent: 'flex-end',
           }}>
-          <TouchableOpacity style={{alignSelf: 'center'}} onPress={async() => {
+          <TouchableOpacity style={{alignSelf: 'center', padding: 30}} onPress={async() => {
               if (cameraRef){
                 const options = {quality: 1, base64:true};
                 let photo = await cameraRef.takePictureAsync(options);

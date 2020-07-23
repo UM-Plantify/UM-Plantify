@@ -15,6 +15,9 @@ export const common_styles = StyleSheet.create({
     icon: {
         width: 50,
         height: 50
+    },
+    footer_icons: {
+        padding: 15
     }
 });
 
@@ -85,17 +88,17 @@ export const Footer = (navigation) => {
         <>
         <View style={common_styles.footer}>
             <View>
-                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("DynamicMap")}>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("DynamicMap")}>
                     <Image style={common_styles.icon} source={require("./icons/map.png")}/>
                 </TouchableOpacity>
             </View>
             <View>
-                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("TakePhoto")}>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("TakePhoto")}>
                 <Image style={common_styles.icon} source={require("./icons/camera.png")}/>
                 </TouchableOpacity>
             </View>
             <View>
-                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("Database")}>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("Database")}>
                 <Image style={common_styles.icon} source={require("./icons/plant.png")}/>
                 </TouchableOpacity>
             </View>
