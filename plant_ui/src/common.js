@@ -4,6 +4,8 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 export const common_styles = StyleSheet.create({
     footer: {
         flexDirection:"row", 
+        justifyContent: 'space-around',
+        alignItems: 'center',
         marginBottom: 0, 
         backgroundColor: "#042940"
     },
@@ -82,18 +84,18 @@ export const Footer = (navigation) => {
     return (
         <>
         <View style={common_styles.footer}>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-start'}} onPress={()=> navigation.navigate("DynamicMap")}>
+            <View>
+                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("DynamicMap")}>
                     <Image style={common_styles.icon} source={require("./icons/map.png")}/>
                 </TouchableOpacity>
             </View>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'center'}} onPress={()=> navigation.navigate("TakePhoto")}>
+            <View>
+                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("TakePhoto")}>
                 <Image style={common_styles.icon} source={require("./icons/camera.png")}/>
                 </TouchableOpacity>
             </View>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-end'}} onPress={()=> navigation.navigate("Database")}>
+            <View>
+                <TouchableOpacity style={{}} onPress={()=> navigation.navigate("Database")}>
                 <Image style={common_styles.icon} source={require("./icons/plant.png")}/>
                 </TouchableOpacity>
             </View>
