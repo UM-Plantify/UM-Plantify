@@ -1,27 +1,41 @@
 import React from 'react';
-import { View, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { Button } from "react-native-paper";
 import * as common from "./common";
 
 function Home({navigation}) {
   return (
     <>
     {common.LogoAndHelpHeader(navigation)}
-    <View style={{ flex: 1, padding: 24 }}>
+    <View style={{justifyContent: 'center', padding: 34 }}>
       <Button
-        title="Take Photo"
-        onPress={() => navigation.navigate('TakePhoto')}
-      />
+        style = {styles.button}
+        onPress = {() => navigation.navigate('TakePhoto')}
+        mode = "contained"
+        color = '#042940'
+      >TAKE PHOTO</Button>
       <Button
-        title="Database"
-        onPress={() => navigation.navigate('Database')}
-      />
+        style = {styles.button}
+        onPress = {() => navigation.navigate('Database')}
+        mode = "contained"
+        color = '#042940'
+      >DATABASE</Button>
       <Button
-        title='Map'
-        onPress={() => navigation.navigate('DynamicMap')}
-      />
+        style = {styles.button}
+        onPress = {() => navigation.navigate('DynamicMap')}
+        mode = "contained"
+        color = '#042940'
+      >MAP</Button>
     </View>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    padding: 10,
+    margin: 10
+  }
+});
 
 export default Home;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MapView from 'react-native-maps'
-import { Text, View, TouchableOpacity, StyleSheet, Dimensions, Button } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { Button } from 'react-native-paper'
 import * as common from './common';
 
 export default function DynamicMap({navigation}) {
@@ -21,9 +22,12 @@ export default function DynamicMap({navigation}) {
             />
             <View style={styles.buttonStyle}>
                 <Button
-                    title='Static Map'
                     onPress={() => navigation.navigate('StaticMap')}
-                />
+                    mode = "contained"
+                    color = '#042940'
+                >
+                    STATIC MAP
+                </Button>
             </View>
         </View>
         {common.Footer(navigation)}

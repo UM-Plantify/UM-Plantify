@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, Button } from "react-native";
+import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
+import { Button } from "react-native-paper";
 import * as api from './api';
 import * as common from "./common";
+
+const win = Dimensions.get('window');
 
 const getIdentification = async (image) => {
   return await api.identifySpecies(image);
@@ -12,16 +15,15 @@ function ConfirmPhoto({navigation}) {
   return (
     <>
     {common.FullHeader(navigation)}
-    <View style={{ flex: 1, padding: 24 }}>
-      <Text style={{justifyContent: 'center'}}>
-          Use this photo?
-      </Text>
+    <View style={{}}>
       <Image 
         source={{uri: photoTaken}}
-        style={{ width: 300, height: 400}}
+        style={styles.image}
       />
-      <Button 
-        title="Yes"
+      <Button
+        style = {styles.button}
+        mode = "contained"
+        color = '#042940'
         onPress={() => {
           let json = getIdentification(photoTaken);
           json.then((data) => {
@@ -31,15 +33,42 @@ function ConfirmPhoto({navigation}) {
             }});
           });
         }}
-      />
+      >YES</Button>
       <Button
-        title="No"
+        style = {styles.button}
         onPress={() => navigation.navigate('TakePhoto')}
-      />
+        mode = "contained"
+        color = '#042940'
+      >NO</Button>
+      <View style={styles.textContainer}>
+      <Text style={styles.text}>
+          Use this photo?
+      </Text>
+      </View>
     </View>
-    {common.Footer(navigation)}
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    padding: 5,
+    margin: 5
+  },
+  image: {
+    width: win.width,
+    height: win.height * .66
+  },
+  textContainer: {
+    position: 'absolute',
+    top: '0%',
+    alignSelf: 'center',
+    padding: 20
+  },
+  text: {
+    color: '#FFFFFF',
+    fontSize: 30
+  }
+});
 
 export default ConfirmPhoto;

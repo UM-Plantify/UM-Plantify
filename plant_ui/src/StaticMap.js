@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ImageZoom from 'react-native-image-pan-zoom';
-import { View, Image, StyleSheet, Dimensions, Button } from 'react-native';
+import { View, Image, StyleSheet, Dimensions } from 'react-native';
+import { Button } from 'react-native-paper'
 import * as common from './common';
 
 export default function StaticMap({navigation}) {
@@ -23,9 +24,12 @@ export default function StaticMap({navigation}) {
             </ImageZoom>
             <View style={styles.buttonStyle}>
                 <Button
-                    title='Dynamic Map'
                     onPress={() => navigation.navigate('DynamicMap')}
-                />
+                    mode = "contained"
+                    color = '#042940'
+                >
+                    DYNAMIC MAP
+                </Button>
             </View>
         </View>
         {common.Footer(navigation)}
@@ -49,6 +53,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: '0%',
         alignSelf: 'flex-end',
-        padding: 10
+        padding: 20
     }
   });
