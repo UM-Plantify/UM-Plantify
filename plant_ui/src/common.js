@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import { IconButton } from "react-native-paper"
+import { Icon } from 'react-native-elements'
 
 export const common_styles = StyleSheet.create({
     footer: {
         flexDirection:"row", 
+        justifyContent: 'space-around',
+        alignItems: 'center',
         marginBottom: 0, 
         backgroundColor: "#042940"
     },
@@ -13,27 +17,42 @@ export const common_styles = StyleSheet.create({
     icon: {
         width: 50,
         height: 50
+    },
+    footer_icons: {
+        padding: 15
     }
 });
 
 export const FullHeader = (navigation) => {
     return (
         <>
-        <View style={{flexDirection:"row", marginTop: 20, backgroundColor: '#0000ff'}}>
+        <View style={{flexDirection:"row", marginTop: 20}}>
             <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-start'}} onPress={()=> navigation.navigate("Home")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>Home</Text>
-                </TouchableOpacity>
+                <IconButton 
+                    icon = {require('./icons/home.png')}
+                    onPress = {() => navigation.navigate("Home")}
+                    color = '#042940'
+                    size={35}
+                />
             </View>
-            <View style= {{flex:1, backgroundColor:'#ffffff'}}>
-                <Text style = {{justifyContent: 'center', fontSize:25}} >
+            <View style= {{}}>
+                <Text style = {{justifyContent: 'center', fontSize:25, paddingTop: 20, color: '#042940'}} >
                     LOGO
                 </Text>
             </View>
             <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-end'}} onPress={()=> navigation.navigate("Help")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>Help</Text>
-                </TouchableOpacity>
+            <IconButton 
+                    icon = {require('./icons/help.png')}
+                    onPress = {() => navigation.navigate("Help")}
+                    color = '#042940'
+                    size={35}
+                    style = {{
+                        position: 'absolute',
+                        top: '0%',
+                        alignSelf: 'flex-end',
+                        padding: 20
+                    }}
+                />
             </View>
         </View>
         </>
@@ -43,16 +62,25 @@ export const FullHeader = (navigation) => {
 export const LogoAndHelpHeader = (navigation) => {
     return (
         <>
-        <View style={{flexDirection:"row", marginTop: 20, backgroundColor: '#0000ff'}}>
-            <View style= {{flex:1, backgroundColor:'#ffffff'}}>
-                <Text style = {{justifyContent: 'center', fontSize:25}} >
+        <View style={{flexDirection:"row", marginTop: 20}}>
+            <View style= {{flex:1}}>
+                <Text style = {{justifyContent: 'center', fontSize: 25, padding: 20, color: '#042940'}} >
                     LOGO
                 </Text>
             </View>
             <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-end'}} onPress={()=> navigation.navigate("Help")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>Help</Text>
-                </TouchableOpacity>
+                <IconButton 
+                    icon = {require('./icons/help.png')}
+                    onPress = {() => navigation.navigate("Help")}
+                    color = '#042940'
+                    size={35}
+                    style = {{
+                        position: 'absolute',
+                        top: '0%',
+                        alignSelf: 'flex-end',
+                        padding: 20
+                    }}
+                />
             </View>
         </View>
         </>
@@ -82,18 +110,18 @@ export const Footer = (navigation) => {
     return (
         <>
         <View style={common_styles.footer}>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-start'}} onPress={()=> navigation.navigate("DynamicMap")}>
+            <View>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("DynamicMap")}>
                     <Image style={common_styles.icon} source={require("./icons/map.png")}/>
                 </TouchableOpacity>
             </View>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'center'}} onPress={()=> navigation.navigate("TakePhoto")}>
+            <View>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("TakePhoto")}>
                 <Image style={common_styles.icon} source={require("./icons/camera.png")}/>
                 </TouchableOpacity>
             </View>
-            <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-end'}} onPress={()=> navigation.navigate("Database")}>
+            <View>
+                <TouchableOpacity style={common_styles.footer_icons} onPress={()=> navigation.navigate("Database")}>
                 <Image style={common_styles.icon} source={require("./icons/plant.png")}/>
                 </TouchableOpacity>
             </View>
