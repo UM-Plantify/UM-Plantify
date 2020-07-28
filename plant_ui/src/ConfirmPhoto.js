@@ -11,13 +11,14 @@ const getIdentification = async (image) => {
 }
 
 function ConfirmPhoto({navigation}) {
-  const photoTaken = navigation.state.params.photoTaken;
+  const photoUri = navigation.state.params.photoUri;
+  const photoData = navigation.state.params.photoData;
   return (
     <>
     {common.FullHeader(navigation)}
     <View style={{}}>
       <Image 
-        source={{uri: photoTaken}}
+        source={{uri: photoUri}}
         style={styles.image}
       />
       <Button
@@ -25,7 +26,7 @@ function ConfirmPhoto({navigation}) {
         mode = "contained"
         color = '#042940'
         onPress={() => {
-          let json = getIdentification(photoTaken);
+          let json = getIdentification(photoData);
           json.then((data) => {
             let plantId = data.id;
             navigation.navigate({routeName: 'PlantInfo', params: {

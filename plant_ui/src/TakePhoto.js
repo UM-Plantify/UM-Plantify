@@ -41,8 +41,9 @@ export default function TakePhoto({navigation}) {
                 const options = {quality: 1, base64:true};
                 let photo = await cameraRef.takePictureAsync(options);
                 let uri = photo.uri;
+                let base64Data = photo.base64;
                 navigation.navigate({routeName: 'ConfirmPhoto', params: {
-                    photoTaken: uri,
+                    photoUri: uri, photoData: base64Data
                 }});
               }
           }}>
