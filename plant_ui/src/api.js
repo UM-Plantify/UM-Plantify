@@ -27,18 +27,32 @@ export const getSpecies = async (speciesId) => {
     }
 }
 
-export const identifySpecies = async (image) => {
+export const identifySpecies = async (uri) => {
     try {
+        //console.log("******** API DEBUG ********");
+        //console.log(uri);
+        let formData = new FormData();
+        formData.append('image', {
+            name: 'image.jpg', 
+            type: 'image/jpg',
+            uri: Platform.OS === "android" ? uri : uri.replace("file://", "")
+        });
+        //formData.append('Content-Type', 'image/jpg');
         let response = await fetch('https://umplantify.serverless.social/api/identify',
         {
           method: 'POST',
-          body: JSON.stringify({
-              image: image,
-          }),
-        });
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+          body: formData,
+        })
+        //.then(response => response.text())
+        //.then(response => console.log(response));
         let json = await response.json();
+        //let json = undefined;
         return json;
     } catch (error) {
+        console.log("*** WE GOT AN ERROR ***")
         console.error(error);
     }
 }

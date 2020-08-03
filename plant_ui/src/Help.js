@@ -6,7 +6,7 @@ function Help({navigation}) {
   
   return (
     <>
-    {common.LogoAndHomeHeader(navigation)}
+    {common.FullHeader(navigation)}
     <View style={{ flex: 1, padding: 24 }}>
         <Text>
             All the fun help text goes here!

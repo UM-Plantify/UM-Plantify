@@ -38,12 +38,11 @@ export default function TakePhoto({navigation}) {
           }}>
           <TouchableOpacity style={{alignSelf: 'center', padding: 30}} onPress={async() => {
               if (cameraRef){
-                const options = {quality: 1, base64:true};
+                const options = {quality: 0.1};
                 let photo = await cameraRef.takePictureAsync(options);
                 let uri = photo.uri;
-                let base64Data = photo.base64;
                 navigation.navigate({routeName: 'ConfirmPhoto', params: {
-                    photoUri: uri, photoData: base64Data
+                    photoUri: uri
                 }});
               }
           }}>

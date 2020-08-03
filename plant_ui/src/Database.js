@@ -1,8 +1,9 @@
 import React, { useEffect, useState, Component } from 'react';
-import { View, Text, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, ActivityIndicator, FlatList, TouchableOpacity, Image } from "react-native";
 import AlphabetSectionList from 'react-native-alphabet-sectionlist';
 import * as api from './api';
 import * as common from "./common";
+import plant_images from '../index';
 
 const alphabet = [
   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
@@ -54,11 +55,13 @@ const renderItem = ({ item }) => {
       marginLeft: 10,
       paddingVertical: 10,
       borderBottomColor: 'lightgray',
-      borderBottomWidth: 0.5,
-      flexDirection: "row"
+      borderBottomWidth: 0.5
     }}>
-      <TouchableOpacity onPress={item.onPress}>
-        <View style={{ backgroundColor: "red", width: 5, height: 5}}/>
+      <TouchableOpacity style={{flexDirection:"row"}} onPress={item.onPress}>
+        <Image 
+          style={{ width: 30, height: 30, marginRight: 10}}
+          source={plant_images[parseInt(item.id) - 1]}
+        />
         <Text>{item.common_name}</Text>
       </TouchableOpacity>
     </View>
@@ -106,7 +109,7 @@ function Database({navigation}) {
         <AlphabetSectionList
           data={speciesList}
           renderItem={renderItem}
-          renderHeader={renderHeader}
+          //renderHeader={renderHeader}
           // custom section header
           renderSectionHeader={renderSectionHeader}
           // default section header styles
