@@ -90,16 +90,31 @@ export const LogoAndHelpHeader = (navigation) => {
 export const LogoAndHomeHeader = (navigation) => {
     return (
         <>
-        <View style={{flexDirection:"row", marginTop: 20, backgroundColor: '#0000ff'}}>
+        <View style={{flexDirection:"row", marginTop: 20}}>
             <View style= {{flex:1}}>
-                <TouchableOpacity style={{justifyContent: 'flex-start'}} onPress={()=> navigation.navigate("Home")}>
-                    <Text style={{color: '#ffffff', fontSize:25}}>Home</Text>
-                </TouchableOpacity>
+                <IconButton 
+                    icon = {require('./icons/home.png')}
+                    onPress = {() => navigation.navigate("Home")}
+                    color = '#042940'
+                    size={35}
+                    style = {{
+                        padding: 20
+                    }}
+                />
             </View>
-            <View style= {{flex:1, backgroundColor:'#ffffff'}}>
-                <Text style = {{justifyContent: 'center', fontSize:25}} >
-                    LOGO
-                </Text>
+            <View style= {{flex:1}}>
+                <IconButton 
+                    icon = {require('./icons/help.png')}
+                    onPress = {() => navigation.navigate("Help")}
+                    color = '#042940'
+                    size={35}
+                    style = {{
+                        position: 'absolute',
+                        top: '0%',
+                        alignSelf: 'flex-end',
+                        padding: 20
+                    }}
+                />
             </View>
         </View>
         </>
