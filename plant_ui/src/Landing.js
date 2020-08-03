@@ -1,17 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { Button } from 'react-native-paper'
 
 function Landing({navigation}) {
   
   return (
-    <View style={{ flex: 1, padding: 24 }}>
-        <Text>
-          UM Plantify
-        </Text>
+    <View style={{ flex: 1, padding: 24, justifyContent:'center' }}>
+        <View style={{flexDirection:'row', justifyContent:'center'}}>
+          <Image
+            style={{width: 150, height: 150, marginTop:50}}
+            source={require('../images/app_logo.png')}
+          />
+        </View>
+        <View style={{flexDirection:'row', justifyContent:'center'}}>
+          <Text style={{fontSize:40}}>
+            UM Plantify
+          </Text>
+        </View>
         <Button
           style = {styles.button}
-          onPress = {() => navigation.navigate('Instructions')}
+          onPress = {() => navigation.navigate('Home')}
           mode = "contained"
           color = '#042940'
         >
