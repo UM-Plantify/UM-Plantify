@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Button } from "react-native-paper";
 import * as common from "./common";
 
@@ -8,6 +8,12 @@ function Home({navigation}) {
     <>
     {common.LogoAndHelpHeader(navigation)}
     <View style={{justifyContent: 'center', padding: 34 }}>
+      <View style={{flexDirection:'row', marginBottom:100, justifyContent: 'center'}}>
+        <Image 
+            style = {{paddingTop: 20}}
+            source={require('../images/plant_graphic.png')}
+        />
+      </View>
       <Button
         style = {styles.button}
         onPress = {() => navigation.navigate('TakePhoto')}

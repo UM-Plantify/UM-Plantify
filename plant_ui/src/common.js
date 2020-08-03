@@ -36,9 +36,10 @@ export const FullHeader = (navigation) => {
                 />
             </View>
             <View style= {{}}>
-                <Text style = {{justifyContent: 'center', fontSize:25, paddingTop: 20, color: '#042940'}} >
-                    LOGO
-                </Text>
+                <Image 
+                    style = {{justifyContent: 'center', paddingTop: 20}}
+                    source={require('../images/plant_graphic.png')}
+                />
             </View>
             <View style= {{flex:1}}>
             <IconButton 
@@ -63,11 +64,12 @@ export const LogoAndHelpHeader = (navigation) => {
     return (
         <>
         <View style={{flexDirection:"row", marginTop: 20}}>
-            <View style= {{flex:1}}>
-                <Text style = {{justifyContent: 'center', fontSize: 25, padding: 20, color: '#042940'}} >
-                    LOGO
-                </Text>
-            </View>
+            {/* <View style= {{flex:1}}>
+                <Image 
+                    style = {{justifyContent: 'center', paddingTop: 20}}
+                    source={require('../images/plant_graphic.png')}
+                />
+            </View> */}
             <View style= {{flex:1}}>
                 <IconButton 
                     icon = {require('./icons/help.png')}
