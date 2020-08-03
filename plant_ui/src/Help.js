@@ -11,40 +11,40 @@ function Help({navigation}) {
         Mission Statement 
       </Text>
       <Text style={styles.text}>
-        Hey plant lovers, Welcome to U-M Plantify. This is your user friendly mobile app that allows you to scan plants, shrubs, or trees from your phone. With an instant picture that then curates facts and descriptions based on your selection.
+        Hey plant lovers, Welcome to U-M Plantify. This is your user friendly mobile app that allows you to scan plants, shrubs, or trees from your phone with an instant picture that then identifies the plant and gives you associated facts and decriptions.
         </Text>
       <Text style={styles.stepHeader}>
-        Photo Identification Page
+        Photo Identification
       </Text>
       <Text style={styles.text}>
-        Problem submitting Photo: If you have reached this page you are experiencing problems submitting your photo. To fix this problem please try the following steps
+        Having trouble taking a photo? Feel that you're getting an inaccurate identification? Try the following steps:
       </Text>
       <Text style={styles.text}>
-        {'\u2B24'} Make sure you are in a well lit area
+        {'\u2B24'} Make sure you are in a well lit area.
       </Text>
       <Text style={styles.text}>
-        {'\u2B24'} Make sure your camera lens is clean
+        {'\u2B24'} Make sure your camera lens is clean.
       </Text>
       <Text style={styles.text}>
-        {'\u2B24'} Focus your camera on the desired area 
+        {'\u2B24'} Focus and center your camera on the plant. 
       </Text>
       <Text style={styles.stepHeader}>
         Is There an Error in the Plant Description?
       </Text>
       <Text style={styles.text}>
-        If you believe that the name of the flower and descriptions does not match your search results please try again and fill out the form on the home page.
+        If you believe that the name of the flower and descriptions does not match your search results please try again and feel free to contact us.
       </Text>
       <Text style={styles.stepHeader}>
         Map
       </Text>
       <Text style={styles.text}>
-        This map shows your current location. Here you have an option of two maps, the Arboretum or of the U of M campus, the home of the Wolverine.
+        The map functionality allows you to see your location in the Arboretum in the Dynamic Map and view a Static Map of the Arb that includes labels and a legend.
       </Text>
       <Text style={styles.stepHeader}>
-        Database Page
+        Database
       </Text>
       <Text style={{fontSize: 19, paddingBottom: 60}}>
-        All your information is stored on a monitored private robust system that is secured for your privacy purposes.
+        Browse the Michigan plants that this app is trained to identify, and dicover information about them!
         </Text>
     </ScrollView>
     {common.Footer(navigation)}

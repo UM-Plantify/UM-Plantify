@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { IconButton } from "react-native-paper"
 import * as common from "./common";
 
@@ -7,7 +7,8 @@ function Instructions({navigation}) {
   
   return (
     <>
-    <View style={{ flex: 1, padding: 34 }}>
+    {common.FullHeader(navigation)}
+    <ScrollView style={{ flex: 1, padding: 34 }}>
         <Text style={styles.header}>
             Instructions
         </Text>
@@ -47,7 +48,7 @@ function Instructions({navigation}) {
             size={55}
           />
         </View>
-    </View>
+    </ScrollView>
     </>
   );
 }

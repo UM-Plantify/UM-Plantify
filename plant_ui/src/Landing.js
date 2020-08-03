@@ -19,7 +19,7 @@ function Landing({navigation}) {
         </View>
         <Button
           style = {styles.button}
-          onPress = {() => navigation.navigate('Instructions')}
+          onPress = {() => navigation.navigate('Home')}
           mode = "contained"
           color = '#042940'
         >
