@@ -13,6 +13,7 @@
     "expo-av": "~8.0.0",
     "expo-camera": "~8.2.0",
     "expo-image-manipulator": "~8.1.0",
+    "localtunnel": "^2.0.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.28",
     "node-stream-zip": "^1.11.2",
