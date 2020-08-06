@@ -1,1 +1,1 @@
-# draft2-cohort-project
+# UM-Plantify
