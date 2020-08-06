@@ -29,7 +29,7 @@ const sortData = (rawList, navigation) => {
   sortedList.forEach(item => {
     var id= item.id;
     Object.defineProperty(item, "onPress", {
-      value: () => navigation.navigate({routeName: 'PlantInfo', params: {id: id,}}),
+      value: () => {navigation.navigate({routeName: 'PlantInfo', params: {id: id,}})},
       enumerable: true
     });
   });

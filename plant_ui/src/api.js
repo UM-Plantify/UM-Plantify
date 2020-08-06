@@ -49,7 +49,7 @@ export const identifySpecies = async (uri) => {
         //.then(response => response.text())
         //.then(response => console.log(response));
         let json = await response.json();
-        //let json = undefined;
+        ///let json = undefined;
         return json;
     } catch (error) {
         console.log("*** WE GOT AN ERROR ***")

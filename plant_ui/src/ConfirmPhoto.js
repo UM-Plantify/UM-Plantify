@@ -38,7 +38,6 @@ function ConfirmPhoto({navigation}) {
             navigation.navigate({routeName: 'PlantInfo', params: {
               id: plantId,
             }});
-            
           });
         }}
       >YES</Button>
