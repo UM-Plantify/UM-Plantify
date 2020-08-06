@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
+import * as ImageManipulator from "expo-image-manipulator";
 import * as common from "./common";
 
 export default function TakePhoto({navigation}) {
@@ -41,8 +42,9 @@ export default function TakePhoto({navigation}) {
                 const options = {quality: 0.1};
                 let photo = await cameraRef.takePictureAsync(options);
                 let uri = photo.uri;
+                let newphoto = await ImageManipulator.manipulateAsync(uri, [{resize: {width: 500, height: 500}}]);
                 navigation.navigate({routeName: 'ConfirmPhoto', params: {
-                    photoUri: uri
+                    photoUri: newphoto.uri
                 }});
               }
           }}>

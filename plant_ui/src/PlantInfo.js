@@ -20,7 +20,8 @@ function PlantInfo({navigation}) {
       setLoading(false);
       console.log(data);
     });
-  }, []);
+  }, [navigation.state.params.id]);
+
   
   return (
     <>
